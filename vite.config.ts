@@ -23,4 +23,8 @@ export default defineConfig({
     globals: true,
     setupFiles: "./src/tests/setup.ts",
   },
+  preview: {
+    port: 3000,
+    strictPort: true,
+  },
 });
