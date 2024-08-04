@@ -48,7 +48,6 @@ export function updateAssignmentOnCompleteOrder(
   assignment: Assignment,
   orderID: number
 ) {
-  
   const updatedAssignment = {
     ...assignment,
   };
@@ -57,8 +56,8 @@ export function updateAssignmentOnCompleteOrder(
     if (o.id === orderID) {
       o.isCompleted = true;
 
-      assignment.currentWeightCapacity =
-        assignment.currentWeightCapacity - o.weight;
+      updatedAssignment.currentWeightCapacity =
+        updatedAssignment.currentWeightCapacity - o.weight;
     }
   });
 
