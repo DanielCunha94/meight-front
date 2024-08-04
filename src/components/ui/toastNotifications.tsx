@@ -1,9 +1,11 @@
+import useEvents from "@hooks/useEvents";
 import useToasts from "@hooks/useToasts";
 import { Alert } from "@material-tailwind/react";
 import { useEffect } from "react";
 
 const ToastContainer = () => {
   const { toasts, removeToast } = useToasts();
+  useEvents();
 
   useEffect(() => {
     const interval = setInterval(() => {

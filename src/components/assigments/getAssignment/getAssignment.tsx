@@ -86,6 +86,14 @@ export function GetAssignment() {
       />
       {assignment?.plate && (
         <div className="w-[32rem] mt-12">
+          <Typography variant="h5" color="blue-gray">
+            Max Capacity / Current Capacity
+          </Typography>
+          <Typography variant="paragraph" color="blue-gray" className="mb-4">
+            {`${assignment.maxWeightCapacity}kg /${
+              assignment.maxWeightCapacity - assignment.currentWeightCapacity
+            }kg`}
+          </Typography>
           <Timeline>
             <TimelineItem>
               <TimelineConnector />
