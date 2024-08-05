@@ -1,5 +1,5 @@
-import { GetAssignment } from "@components/assigments/getAssignment/getAssignment";
-import { NewAssignment } from "@components/assigments/newAssignment";
+import GetAssignment from "@components/assigments/getAssignment/getAssignment";
+import NewAssignment from "@components/assigments/newAssignment";
 
 const Assignments = () => {
   return (

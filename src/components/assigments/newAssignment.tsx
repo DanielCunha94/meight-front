@@ -23,7 +23,7 @@ import orderService from "@services/order";
 
 const TABLE_HEAD = ["Latitude", "Longitude", "Weight", "Selected"];
 
-export function NewAssignment() {
+const NewAssignment = () => {
   const { isLoading, setIsLoading } = useLoading();
   const [open, setOpen] = useState(false);
   const [assignment, setAssignment] = useState(newAssignment());
@@ -241,4 +241,6 @@ export function NewAssignment() {
       </form>
     </>
   );
-}
+};
+
+export default NewAssignment;

@@ -15,6 +15,7 @@ const CustomNavbar = () => {
   const [openNav, setOpenNav] = useState(false);
   const [currentRoute, setCurrentRoute] = useState(getCurrentRoute());
   const navigate = useNavigate();
+  
   useEffect(() => {
     window.addEventListener(
       "resize",

@@ -15,7 +15,11 @@ import orderService from "@services/order";
 import Loading from "@components/ui/loading";
 import useToasts from "@hooks/useToasts";
 
-export function NewOrder() {
+interface NewOrderProps {
+  onSubmit: () => void;
+}
+
+const NewOrder = ({ onSubmit }: NewOrderProps) => {
   const { isLoading, setIsLoading } = useLoading();
   const [open, setOpen] = useState(false);
   const [order, setOrder] = useState(newOrder());
@@ -80,7 +84,7 @@ export function NewOrder() {
     } else {
       addToast({ message: "Fail to create Order", type: "red" });
     }
-
+    onSubmit();
     setIsLoading(false);
     handleOpen();
   }
@@ -188,4 +192,6 @@ export function NewOrder() {
       </Dialog>
     </>
   );
-}
+};
+
+export default NewOrder;

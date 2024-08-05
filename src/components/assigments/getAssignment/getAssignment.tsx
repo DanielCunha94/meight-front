@@ -24,7 +24,7 @@ interface SearchState {
   date: string;
 }
 
-export function GetAssignment() {
+const GetAssignment = () => {
   const { setIsLoading } = useLoading();
   const { addToast } = useToasts();
   const [assignment, setAssignment] = useState<Assignment | undefined>();
@@ -33,15 +33,15 @@ export function GetAssignment() {
     date: "",
   });
 
-  const handleChangePlate = (e: ChangeEvent<HTMLInputElement>) => {
+  function handleChangePlate(e: ChangeEvent<HTMLInputElement>) {
     setSearchParams((prev) => ({ ...prev, plate: e.target.value }));
-  };
+  }
 
-  const handleChangeDate = (e: ChangeEvent<HTMLInputElement>) => {
+  function handleChangeDate(e: ChangeEvent<HTMLInputElement>) {
     setSearchParams((prev) => ({ ...prev, date: e.target.value }));
-  };
+  }
 
-  const handleSearch = async () => {
+  async function handleSearch() {
     setIsLoading(true);
     const res = await assignmentService.getAssignmentByPlateAndDate(
       searchParams.plate,
@@ -52,9 +52,9 @@ export function GetAssignment() {
     }
     setAssignment(res);
     setIsLoading(false);
-  };
+  }
 
-  const handleCompleteOrder = async (orderID: number) => {
+  async function handleCompleteOrder(orderID: number) {
     setIsLoading(true);
     const res = await orderService.complete(orderID);
     addToast(
@@ -71,7 +71,7 @@ export function GetAssignment() {
       setAssignment({ ...updatedAssignment });
     }
     setIsLoading(false);
-  };
+  }
 
   return (
     <div className="flex flex-col items-center">
@@ -144,4 +144,6 @@ export function GetAssignment() {
       )}
     </div>
   );
-}
+};
+
+export default GetAssignment;

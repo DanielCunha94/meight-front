@@ -1,11 +1,12 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { NewOrder } from "./newOrder";
+import NewOrder from "./newOrder";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import { LoadingProvider } from "@store/loading";
 import { ToastProvider } from "@store/toasts";
 import orderService from "@services/order";
 
 vi.mock("@services/order");
+const onSubmit = vi.fn();
 
 describe("NewOrder Component", () => {
   beforeEach(() => {
@@ -16,7 +17,7 @@ describe("NewOrder Component", () => {
     render(
       <ToastProvider>
         <LoadingProvider>
-          <NewOrder />
+          <NewOrder onSubmit={onSubmit} />
         </LoadingProvider>
       </ToastProvider>
     );
@@ -27,7 +28,7 @@ describe("NewOrder Component", () => {
     render(
       <ToastProvider>
         <LoadingProvider>
-          <NewOrder />
+          <NewOrder onSubmit={onSubmit} />
         </LoadingProvider>
       </ToastProvider>
     );
@@ -60,7 +61,7 @@ describe("NewOrder Component", () => {
     render(
       <ToastProvider>
         <LoadingProvider>
-          <NewOrder />
+          <NewOrder onSubmit={onSubmit} />
         </LoadingProvider>
       </ToastProvider>
     );
@@ -78,7 +79,7 @@ describe("NewOrder Component", () => {
     render(
       <ToastProvider>
         <LoadingProvider>
-          <NewOrder />
+          <NewOrder onSubmit={onSubmit} />
         </LoadingProvider>
       </ToastProvider>
     );

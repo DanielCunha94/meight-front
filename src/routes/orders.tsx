@@ -1,5 +1,5 @@
-import { NewOrder } from "@components/orders/newOrder";
-import { OrdersList } from "@components/orders/ordersList";
+import NewOrder from "@components/orders/newOrder";
+import OrdersList from "@components/orders/ordersList";
 import { UpdateObservations } from "@components/orders/updateOservations";
 import Order from "@models/order";
 import orderService from "@services/order";
@@ -35,7 +35,7 @@ export default function Orders() {
 
   return (
     <div>
-      <NewOrder />
+      <NewOrder onSubmit={onSubmit} />
       <OrdersList
         orders={orders}
         handleChangeObservations={handleChangeObservations}

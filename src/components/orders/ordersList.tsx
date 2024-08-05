@@ -8,10 +8,8 @@ interface OrderListProps {
   orders: Order[];
   handleChangeObservations: (id: number) => void;
 }
-export function OrdersList({
-  orders,
-  handleChangeObservations,
-}: OrderListProps) {
+
+const OrdersList = ({ orders, handleChangeObservations }: OrderListProps) => {
   if (!orders?.length) {
     return (
       <>
@@ -110,4 +108,6 @@ export function OrdersList({
       </tbody>
     </table>
   );
-}
+};
+
+export default OrdersList;
